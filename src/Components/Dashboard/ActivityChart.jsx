@@ -5,8 +5,8 @@ import tw from 'tailwind-styled-components';
 
 const Container = tw.div`bg-gray-800 p-4 rounded-lg w-full`;
 const Header = tw.div`flex justify-between items-center mb-4`;
-const TitleText = tw.h2`text-white text-lg`;
-const Dropdown = tw.select`bg-gray-700 text-white py-1 px-3 rounded`;
+const TitleText = tw.h2`text-base font-medium text-white`;
+const Dropdown = tw.select`bg-gray-700 text-white py-1 px-3 rounded-full`;
 
 const data = [
     { day: '1', activity: 5000 },

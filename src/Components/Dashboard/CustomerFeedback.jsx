@@ -2,13 +2,13 @@ import React from 'react';
 import tw from 'tailwind-styled-components';
 import { FaStar } from 'react-icons/fa';
 
-const Container = tw.div`p-6 bg-gray-800 rounded-lg shadow-md`;
+const Container = tw.div`p-6 bg-gray-800 rounded-lg shadow-md h-[75vh] overflow-y-auto`;
 const Title = tw.h2`text-xl text-white font-semibold mb-4`;
-const FeedbackItem = tw.div`py-4 flex items-start`;
-const FeedbackContent = tw.div`ml-4`;
-const Name = tw.div`text-lg text-white`;
+const FeedbackItem = tw.div`pt-4 flex items-start`;
+const FeedbackContent = tw.div`ml-4 items-center `;
+const Name = tw.div`text-lg text-white items-center mt-1`;
 const Comment = tw.p`text-gray-400 mt-2`;
-const ProfileImage = tw.img`w-12 h-12 rounded-full`;
+const ProfileImage = tw.img`w-10 h-10 rounded-full`;
 const Separator = tw.hr`border-gray-700 my-1`;
 
 const feedback = [
@@ -42,17 +42,20 @@ const CustomerFeedback = () => {
                         <ProfileImage src={item.image} alt={item.name} />
                         <FeedbackContent>
                             <Name>{item.name}</Name>
-                            <div className="flex">
-                                {[...Array(item.rating)].map((_, i) => (
-                                    <FaStar key={i} className="text-yellow-500" />
-                                ))}
-                                {[...Array(5 - item.rating)].map((_, i) => (
-                                    <FaStar key={i} className="text-gray-500" />
-                                ))}
-                            </div>
-                            <Comment>{item.comment}</Comment>
+
                         </FeedbackContent>
                     </FeedbackItem>
+                    <div className='pb-4'>
+                        <div className="flex mt-2">
+                            {[...Array(item.rating)].map((_, i) => (
+                                <FaStar key={i} className="text-yellow-500" />
+                            ))}
+                            {[...Array(5 - item.rating)].map((_, i) => (
+                                <FaStar key={i} className="text-gray-500" />
+                            ))}
+                        </div>
+                        <Comment>{item.comment}</Comment>
+                    </div>
                     {index < feedback.length - 1 && <Separator />}
                 </React.Fragment>
             ))}

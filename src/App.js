@@ -4,7 +4,7 @@ import Header from "./Components/Header";
 import Dashboard from "./Pages/Dashboard";
 import tw from "tailwind-styled-components";
 
-const Container = tw.div`flex bg-gray-900 text-white h-fit `;
+const Container = tw.div`flex bg-gray-900 text-white max-h-fit `;
 const Main = tw.div`flex-1 flex flex-col`;
 
 const App = () => {

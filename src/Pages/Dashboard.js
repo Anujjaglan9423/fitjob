@@ -11,9 +11,10 @@ const Container = tw.div`p-4 space-y-4`;
 const Section = tw.div`grid grid-cols-2 xl:grid-cols-4 gap-4 lg:w-2/3 w-full`;
 const TableSection = tw.div` lg:w-2/3 w-full`;
 const SideSection = tw.div`lg:w-1/3  w-full`;
-
+const Title = tw.h1`text-2xl font-semibold text-white`;
 const Dashboard = () => (
   <Container>
+    <Title>Dashboard</Title>
     <div className="lg:flex lg:space-x-6 space-y-4 lg:space-y-0">
       <Section>
         <Card

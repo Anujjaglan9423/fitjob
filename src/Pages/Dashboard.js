@@ -7,11 +7,6 @@ import CustomerFeedback from "../Components/Dashboard/CustomerFeedback";
 import NetProfitCard from "../Components/Dashboard/NetProfitCard";
 import MenuList from "../Components/Dashboard/MenuList";
 
-const Container = tw.div`p-4 space-y-4`;
-const Section = tw.div`grid grid-cols-2 xl:grid-cols-4 gap-4 lg:w-2/3 w-full`;
-const TableSection = tw.div` lg:w-2/3 w-full`;
-const SideSection = tw.div`lg:w-1/3  w-full`;
-const Title = tw.h1`text-2xl font-semibold text-white`;
 const Dashboard = () => (
   <Container>
     <Title>Dashboard</Title>
@@ -68,5 +63,9 @@ const Dashboard = () => (
     </div>
   </Container>
 );
-
+const Container = tw.div`sm:p-4 px-2 py-4 space-y-4`;
+const Section = tw.div`grid grid-cols-2 xl:grid-cols-4 sm:gap-4 gap-2 lg:w-2/3 w-full`;
+const TableSection = tw.div` lg:w-2/3 w-full`;
+const SideSection = tw.div`lg:w-1/3  w-full`;
+const Title = tw.h1`text-2xl font-semibold text-white`;
 export default Dashboard;

@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Sidebar from "./Components/Sidebar";
+import Header from "./Components/Header";
+import Dashboard from "./Pages/Dashboard";
+import tw from "tailwind-styled-components";
 
-function App() {
+const Container = tw.div`flex bg-gray-900 text-white h-fit `;
+const Main = tw.div`flex-1 flex flex-col`;
+
+const App = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isHeaderMenuOpen, setIsHeaderMenuOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const toggleHeaderMenu = () => {
+    setIsHeaderMenuOpen(!isHeaderMenuOpen);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Main>
+        <Header
+          toggleSidebar={toggleSidebar}
+          toggleHeaderMenu={toggleHeaderMenu}
+          isHeaderMenuOpen={isHeaderMenuOpen}
+        />
+        <Dashboard />
+      </Main>
+    </Container>
   );
-}
+};
 
 export default App;

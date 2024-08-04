@@ -70,7 +70,7 @@ const Header = ({ toggleSidebar, toggleHeaderMenu, isHeaderMenuOpen }) => (
     </>
 );
 
-const Container = tw.div`flex justify-between items-center sm:p-4 py-4 px-2 bg-[#1F2029]`;
+const Container = tw.div`flex justify-between items-center sm:p-4 py-4 bg-[#1F2029]`;
 const SearchBox = tw.div`flex items-center bg-gray-800 p-2 rounded-md`;
 const Icon = tw.div`text-gray-400 text-[1.3rem] mx-2 bg-[#44464A] rounded-full p-2 relative cursor-pointer`;
 const Badge = tw.div`absolute top-0 right-0 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center`;
